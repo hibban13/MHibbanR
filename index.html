@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio Hibban</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+       background: linear-gradient(135deg, #0f2027, #2c5364, #203a43);
+    color: #fff;
+      padding-top: 70px;
+    }
+
+    .navbar {
+      background-color: #031336;
+    }
+
+    .navbar .nav-link {
+      color: white !important;
+    }
+
+    .navbar .nav-link:hover {
+      color: #4a90e2 !important;
+    }
+
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .mhr-logo {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .portfolio-title {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .btn-explore {
+      background-color: #d17900;
+      color: white;
+      font-weight: bold;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 0;
+    }
+
+    .btn-explore:hover {
+      background-color: #b86400;
+    }
+
+.photo-box {
+  display: inline-block;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.3);
+}
+
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.btn-explore {
+  font-size: 1rem;
+  border-radius: 30px;
+  padding: 12px 35px;
+  letter-spacing: 1px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #ff6600 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #00c3ff 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.hero .row {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #2c5364, #203a43);
+  padding: 50px 0;
+}
+
+.intro-text {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #fffcfc;
+  margin-bottom: 10px;
+}
+
+.display-4 {
+  font-size: 48px;
+}
+
+.highlight {
+  color: #e63946; 
+}
+
+.description {
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.hero-img-wrapper {
+  position: relative;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+
+    .section-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: white;
+    }
+
+    .edu-img {
+      max-height: 120px;
+      margin-bottom: 15px;
+    }
+
+    .edu-box {
+      border-left: 2px solid white;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .edu-box:first-child {
+      border-left: none;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .edu-box {
+        border-left: none;
+        margin-bottom: 30px;
+      }
+
+      .mhr-logo {
+        font-size: 1.8rem;
+        left: 15px;
+      }
+
+      .portfolio-title {
+        font-size: 1rem;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="Logo.png" alt="Foto Hibban" class="img-fluid" style="max-height: 40px;">
+    </div>
+    <div class="text-center flex-grow-1">
+      <span class="navbar-brand mx-auto fw-bold text-white" style="font-size: 1.5rem;">PORTOFOLIO</span>
+    </div>
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon bg-light"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav text-end">
+        <li class="nav-item"><a class="nav-link" href="#pendidikan">Pendidikan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#organisasi">Organisasi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#keahlian">Keahlian</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+  <section class="hero-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <div class="col-md-6 text-left">
+        <p class="intro-text">Sampurasun</p>
+        <h1 class="display-4 fw-bold">
+          Saya <span class="highlight">Mochamad Hibban Rasyiddin</span>
+        </h1>
+        <p class="description">
+          Saya mahasiswa Universitas Pendidikan Indonesia pada jurusan Pendidikan Multimedia, saat ini sedang menempuh semester 4.
+        </p>
+        <a href="#kontak" class="btn btn-danger mt-3">Hubungi Saya</a>
+      </div>
+      <div class="col-md-6 text-center">
+        <div class="hero-img-wrapper">
+          <img src="hiban.png" alt="Foto Profil" class="img-fluid hero-img">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+  <section id="pendidikan" class="py-5">
+    <div class="container text-white text-center">
+      <h2 class="section-title">PENDIDIKAN</h2>
+      <div class="row justify-content-center">
+        <div class="col-6 col-md-3 edu-box">
+          <img src="Tutwuri.png" class="img-fluid edu-img" alt="SD">
+          <p class="fw-semibold mb-0">SDN Sirnajaya 02</p>
+          <small>(2010–2016)</small>
+        </div>
+        <div class="col-6 col-md-3 edu-box">
+          <img src="PERSIS 31.png" class="img-fluid edu-img" alt="PPI">
+          <p class="fw-semibold mb-0">Tsanawiyah PPI 31</p>
+          <small>(2016–2019)</small>
+        </div>
+        <div class="col-6 col-md-3 edu-box mt-4 mt-md-0">
+          <img src="SMAN1Banjaran.png" class="img-fluid edu-img" alt="SMA">
+          <p class="fw-semibold mb-0">SMAN 1 Banjaran</p>
+          <small>(2019–2022)</small>
+        </div>
+        <div class="col-6 col-md-3 edu-box mt-4 mt-md-0">
+          <img src="Logo UPI.png" class="img-fluid edu-img" alt="UPI">
+          <p class="fw-semibold mb-0">Universitas Pendidikan Indonesia</p>
+          <small>(2023–SEKARANG)</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="organisasi" class="py-5">
+    <div class="container text-white">
+      <div class="text-center mb-5">
+        <h2 class="section-title">ORGANISASI / KEPANITIAN</h2>
+      </div>
+      <div class="row text-center justify-content-center">
+        <div class="col-6 col-md-4 edu-box">
+          <img src="Logo Wanayudha.png" class="img-fluid edu-img mb-2" alt="Wanayudha" >
+          <p class="fw-semibold mb-0">Bendahara Wanayudha</p>
+          <small>2021 - 2022</small>
+        </div>
+        <div class="col-6 col-md-4 edu-box mt-4 mt-md-0">
+          <img src="PEDIA.png" class="img-fluid edu-img mb-2" alt="AEG">
+          <p class="fw-semibold mb-0">Kadiv HUMAS</p>
+          <small>Alumni Executive Gathering<br>2024</small>
+        </div>
+        <div class="col-12 col-md-4 edu-box mt-4 mt-md-0 text-center">
+          <img src="Logo Hima Berwarna.png" class="img-fluid edu-img mb-2" alt="HIMA" >
+          <ul class="text-white text-start ps-3 d-inline-block">
+            <li>Divisi Humas ODWH Himapedia (2024)</li>
+            <li>Divisi Humas MBPM Himapedia (2024)</li>
+            <li>Sekretaris Departemen Pendag Himapedia (2025-Sekarang)</li>
+            <li>Sekretaris PECI Himapedia (2025)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="keahlian" class="py-5">
+    <div class="container text-white">
+      <div class="text-center mb-5">
+        <h2 class="section-title">KEAHLIAN</h2>
+      </div>
+      <div class="row text-center justify-content-center">
+        <div class="col-12 col-md-4 mb-5">
+          <h5 class="fw-bold text-uppercase border-bottom pb-2 mb-3">DESAIN GRAFIS</h5>
+          <img src="Logo Adobe AI.png" alt="AI" class="img-fluid mb-2" style="max-height: 70px;">
+          <br>
+          <img src="Logo Canva.jpg" alt="Canva" class="img-fluid mb-3" style="max-height: 70px;">
+          <ul class="list-unstyled text-start d-inline-block">
+          </ul>
+        </div>
+        <div class="col-12 col-md-4 mb-5 border-start border-end">
+          <h5 class="fw-bold text-uppercase border-bottom pb-2 mb-3">VIDEO EDITING</h5>
+          <img src="Logo Adobe Pr.png" alt="Premiere" class="img-fluid mb-2" style="max-height: 70px;">
+          <br>
+          <img src="Logo Capcut.png" alt="Capcut" class="img-fluid mb-3" style="max-height: 70px;">
+          <ul class="list-unstyled text-start d-inline-block">
+          </ul>
+        </div>
+        <div class="col-12 col-md-4 mb-5">
+          <h5 class="fw-bold text-uppercase border-bottom pb-2 mb-3">FOTOGRAFI</h5>
+          <div class="rounded bg-dark" style="height: 140px; width: 140px; margin: 0 auto 15px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="kontak" class="py-5"></section>
+  <footer class="bg-dark text-white text-center py-4">
+    <p class="mb-2 fw-semibold">&copy; 2025 Mochamad Hibban Rasyiddin</p>
+    <h5 class="mb-3">Kontak</h5>
+    <div class="d-flex justify-content-center flex-wrap gap-4">
+      <p class="mb-0">Email: <a href="mailto:hibbanrasyiddin@gmail.com" class="text-info fw-semibold">hibbanrasyiddin@gmail.com</a></p>
+      <p class="mb-0">Instagram: <a href="https://www.instagram.com/mochhibban_r/" class="text-info fw-semibold" target="_blank">@mochhibban_r</a></p>
+      <p class="mb-0">WhatsApp: <a href="https://wa.me/6283821007147" class="text-info fw-semibold" target="_blank">083-821-007-147</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
+
+
